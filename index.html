@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="周期的データを活用したコンディション可視化サイト。GitHub Actionsと自動更新によるWeb開発技術の学習試作サイトです。">
+    <title>Daily Condition - 周期的データを活用したコンディション可視化</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo-icon" aria-hidden="true"></div>
+            <div class="header-text">
+                <h1 class="site-title">Daily Condition</h1>
+                <p class="site-subtitle">周期的データを活用したコンディション可視化</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- メインコンテンツ -->
+    <main class="main-container">
+        <!-- 読み込み中の表示 -->
+        <div id="loadingContainer" class="loading-container" role="status">
+            <div class="loading-spinner" aria-hidden="true"></div>
+            <p>データを読み込んでいます...</p>
+        </div>
+
+        <!-- エラーメッセージ -->
+        <div id="errorContainer" class="error-container" role="alert" style="display: none;"></div>
+
+        <!-- コンテンツ -->
+        <div id="contentContainer" style="display: none;">
+            <!-- メインビジュアル -->
+            <section class="main-visual" id="mainVisualSection">
+                <div class="condition-score-wrapper">
+                    <div class="condition-score" id="overallScore">
+                        <span class="score-value" id="overallValue">-</span>
+                        <span class="score-label">今日のコンディション</span>
+                    </div>
+                    <p class="updated-time" id="updatedTime">最終更新: -</p>
+                </div>
+            </section>
+
+            <!-- コンディションカード -->
+            <section class="cards-section">
+                <div class="cards-grid">
+                    <!-- 活動しやすさ -->
+                    <article class="condition-card">
+                        <h2 class="card-title">活動しやすさ</h2>
+                        <div class="gauge-container">
+                            <div class="gauge-dots" id="energyGauge" aria-label="活動しやすさ"></div>
+                        </div>
+                        <p class="gauge-value" id="energyValue">-</p>
+                        <p class="card-description">身体を動かしやすい状態かどうかを表します</p>
+                    </article>
+
+                    <!-- 集中しやすさ -->
+                    <article class="condition-card">
+                        <h2 class="card-title">集中しやすさ</h2>
+                        <div class="gauge-container">
+                            <div class="gauge-dots" id="focusGauge" aria-label="集中しやすさ"></div>
+                        </div>
+                        <p class="gauge-value" id="focusValue">-</p>
+                        <p class="card-description">作業や勉強に集中できやすい状態かどうかを表します</p>
+                    </article>
+
+                    <!-- 気分の安定度 -->
+                    <article class="condition-card">
+                        <h2 class="card-title">気分の安定度</h2>
+                        <div class="gauge-container">
+                            <div class="gauge-dots" id="moodGauge" aria-label="気分の安定度"></div>
+                        </div>
+                        <p class="gauge-value" id="moodValue">-</p>
+                        <p class="card-description">気分が安定している状態かどうかを表します</p>
+                    </article>
+                </div>
+            </section>
+
+            <!-- メッセージカード -->
+            <section class="message-section">
+                <article class="message-card">
+                    <p class="message-text" id="messageText">-</p>
+                </article>
+            </section>
+
+            <!-- サイト説明 -->
+            <section class="info-section">
+                <h2>このサイトについて</h2>
+                <div class="info-content">
+                    <p>このサイトは、データ処理、自動更新、Web可視化などの技術を学習するために開発された試作サイトです。</p>
+                    <h3>使用技術</h3>
+                    <ul>
+                        <li><strong>フロントエンド:</strong> HTML5、CSS3、Vanilla JavaScript</li>
+                        <li><strong>データ処理:</strong> JSON形式のコンディション情報を取得・解析</li>
+                        <li><strong>自動更新:</strong> GitHub Actionsによる定期データ更新</li>
+                        <li><strong>ホスティング:</strong> GitHub Pagesによる公開</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- 注意書き -->
+            <section class="disclaimer-section">
+                <h2>免責事項</h2>
+                <p class="disclaimer-text">
+                    このサイトは、周期的データの処理、自動更新およびWeb可視化の学習を目的とした試作サイトです。表示内容は一定のルールに基づく参考情報であり、医学的な診断や実際の体調を保証するものではありません。
+                </p>
+            </section>
+        </div>
+    </main>
+
+    <!-- フッター -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="footer-title">Daily Condition</p>
+            <p class="footer-subtitle">Web Development &amp; Data Visualization Study</p>
+            <p class="footer-year" id="copyrightYear">© 2026</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
