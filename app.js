@@ -153,6 +153,10 @@ function setMainVisualClass(overallLabel) {
         section.classList.add('condition-normal');
     } else if (overallLabel === '低め') {
         section.classList.add('condition-low');
+    } else if (overallLabel === '推定精度低下') {
+        section.classList.add('condition-reduced');
+    } else if (overallLabel === '推定保留') {
+        section.classList.add('condition-pending');
     }
 }
 
@@ -187,8 +191,9 @@ function validateConditionData(data) {
     if (typeof data.overall !== 'string') {
         throw new Error('overall must be a string');
     }
-    if (!['低め', '通常', '高め'].includes(data.overall)) {
-        throw new Error('overall must be one of: 低め, 通常, 高め');
+    const allowedOverall = ['低め', '通常', '高め', '推定精度低下', '推定保留'];
+    if (!allowedOverall.includes(data.overall)) {
+        throw new Error(`overall must be one of: ${allowedOverall.join(', ')}`);
     }
 
     // 数値フィールドの検証

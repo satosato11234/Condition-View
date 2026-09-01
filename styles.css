@@ -192,6 +192,16 @@ body {
     border-left: 4px solid #b0c4de;
 }
 
+.main-visual.condition-reduced {
+    background: linear-gradient(135deg, #ffffff 0%, #fdf6e3 100%);
+    border-left: 4px solid #d4b96a;
+}
+
+.main-visual.condition-pending {
+    background: linear-gradient(135deg, #ffffff 0%, #f2f2f2 100%);
+    border-left: 4px solid #a0a0a0;
+}
+
 .condition-score-wrapper {
     text-align: center;
 }
