@@ -1,8 +1,8 @@
 {
   "updatedAt": "2026-09-01",
-  "overall": "通常",
+  "overall": "推定保留",
   "energy": 3,
   "focus": 3,
   "moodStability": 3,
-  "message": "やる気が出やすくなってきているので、進めたいことに取り組みましょう。"
+  "message": "現在は周期データだけでは状態を推定しにくい期間です。"
 }
